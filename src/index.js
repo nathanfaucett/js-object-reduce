@@ -1,4 +1,5 @@
-var keys = require("keys");
+var keys = require("@nathanfaucett/keys"),
+    isUndefined = require("@nathanfaucett/is_undefined");
 
 
 module.exports = objectReduce;
@@ -10,7 +11,7 @@ function objectReduce(object, callback, initialValue) {
         value = initialValue,
         i, key;
 
-    if (value === undefined) {
+    if (isUndefined(value)) {
         i = 0;
         value = object[objectKeys[i]];
     } else {
